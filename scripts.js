@@ -1,8 +1,29 @@
+// @ts-check
+
+/**
+ * imports the files info form the data module 
+ */
 import { books, authors, genres, BOOKS_PER_PAGE } from './data.js'
 
+
+/**
+ * 
+ * @typedef {number} page - the page the user is on pending on amount of search's
+ * @typedef {object} matches - var to  be used to deconstruct books into the relevant searchs 
+ */
 let page = 1;
 let matches = books
 
+
+/**
+ * the loop used to preview the opening 36 books on the front webpage
+ * @typedef {DocumentFragment} starting - creates a DOM fragment for the books shown in the preview
+ * @property {Element} element - is used to attach a element to the button class in the HTML
+ */
+
+/**
+ * @type {starting}
+ */
 const starting = document.createDocumentFragment()
 
 for (const { author, id, image, title } of matches.slice(0, BOOKS_PER_PAGE)) {
